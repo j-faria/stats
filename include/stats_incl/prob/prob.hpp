@@ -35,6 +35,7 @@
 #include "plogis.hpp"
 #include "pnorm.hpp"
 #include "ppois.hpp"
+#include "preciprocal.hpp"
 #include "pt.hpp"
 #include "punif.hpp"
 #include "pweibull.hpp"

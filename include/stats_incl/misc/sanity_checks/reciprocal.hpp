@@ -18,32 +18,38 @@
   ##
   ################################################################################*/
 
-#ifndef _statslib_dens_HPP
-#define _statslib_dens_HPP
+/*
+ * Sanity checks for the reciprocal distribution
+ */
 
-#include "dbern.hpp"
-#include "dbeta.hpp"
-#include "dcauchy.hpp"
-#include "dchisq.hpp"
-#include "dexp.hpp"
-#include "dgamma.hpp"
-#include "dinvgamma.hpp"
-#include "dinvwish.hpp"
-#include "dkumaraswamy.hpp"
-#include "dlaplace.hpp"
-#include "dlogis.hpp"
-#include "dmvnorm.hpp"
-#include "dnorm.hpp"
-#include "dpois.hpp"
-#include "dreciprocal.hpp"
-#include "dt.hpp"
-#include "dunif.hpp"
-#include "dweibull.hpp"
-#include "dwish.hpp"
+namespace internal
+{
 
-// these depend on the above
-#include "dbinom.hpp"
-#include "df.hpp"
-#include "dlnorm.hpp"
+template<typename T>
+statslib_constexpr
+bool
+reciprocal_sanity_check(const T a_par, const T b_par)
+noexcept
+{
+    return( GCINT::any_nan(a_par,b_par) ? \
+                false :
+            // 
+            a_par <= 0 ? \
+                false :
+            //
+            a_par >= b_par ? \
+                false :
+            //
+                true );
+}
 
-#endif
+template<typename T>
+statslib_constexpr
+bool
+reciprocal_sanity_check(const T inp_val, const T a_par, const T b_par)
+noexcept
+{
+    return (!GCINT::is_nan(inp_val)) && reciprocal_sanity_check(a_par,b_par);
+}
+
+}

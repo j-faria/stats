@@ -18,32 +18,40 @@
   ##
   ################################################################################*/
 
-#ifndef _statslib_dens_HPP
-#define _statslib_dens_HPP
+/*
+ * Sample from a reciprocal distribution
+ */
 
-#include "dbern.hpp"
-#include "dbeta.hpp"
-#include "dcauchy.hpp"
-#include "dchisq.hpp"
-#include "dexp.hpp"
-#include "dgamma.hpp"
-#include "dinvgamma.hpp"
-#include "dinvwish.hpp"
-#include "dkumaraswamy.hpp"
-#include "dlaplace.hpp"
-#include "dlogis.hpp"
-#include "dmvnorm.hpp"
-#include "dnorm.hpp"
-#include "dpois.hpp"
-#include "dreciprocal.hpp"
-#include "dt.hpp"
-#include "dunif.hpp"
-#include "dweibull.hpp"
-#include "dwish.hpp"
+#ifndef _statslib_rreciprocal_HPP
+#define _statslib_rreciprocal_HPP
 
-// these depend on the above
-#include "dbinom.hpp"
-#include "df.hpp"
-#include "dlnorm.hpp"
+//
+// scalar output
+
+template<typename T1, typename T2>
+statslib_inline
+common_return_t<T1,T2>
+rreciprocal(const T1 a_par, const T2 b_par, rand_engine_t& engine);
+
+template<typename T1, typename T2>
+statslib_inline
+common_return_t<T1,T2>
+rreciprocal(const T1 a_par, const T2 b_par, const ullint_t seed_val = std::random_device{}());
+
+
+//
+// vector/matrix output
+
+#ifdef STATS_ENABLE_INTERNAL_VEC_FEATURES
+template<typename mT, typename T1, typename T2>
+statslib_inline
+mT
+rreciprocal(const ullint_t n, const ullint_t k, const T1 a_par, const T2 b_par);
+#endif
+
+//
+// include implementation files
+
+#include "rreciprocal.ipp"
 
 #endif

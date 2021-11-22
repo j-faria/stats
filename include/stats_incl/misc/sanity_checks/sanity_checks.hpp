@@ -41,6 +41,7 @@
 #include "pois.hpp"
 #include "t.hpp"
 #include "unif.hpp"
+#include "reciprocal.hpp"
 #include "weibull.hpp"
 // #include "wish.hpp"
 
