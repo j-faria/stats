@@ -177,6 +177,21 @@ Distributions
 
 .. toctree::
    :maxdepth: 2
+   
+   kumaraswamy
+
++-------------------------------------------------+--------------------------------------------------------------+
+| :ref:`dkumaraswamy <dkumaraswamy-func-ref1>`    | density function of the Kumaraswamy distribution             |
++-------------------------------------------------+--------------------------------------------------------------+
+| :ref:`pkumaraswamy <pkumaraswamy-func-ref1>`    | distribution function of the Kumaraswamy distribution        |
++-------------------------------------------------+--------------------------------------------------------------+
+| :ref:`qkumaraswamy <qkumaraswamy-func-ref1>`    | quantile function of the Kumaraswamy distribution            |
++-------------------------------------------------+--------------------------------------------------------------+
+| :ref:`rkumaraswamy <rkumaraswamy-func-ref1>`    | sampling function of the Kumaraswamy distribution            |
++-------------------------------------------------+--------------------------------------------------------------+
+
+.. toctree::
+   :maxdepth: 2
 
    laplace
 

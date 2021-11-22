@@ -18,29 +18,39 @@
   ##
   ################################################################################*/
 
-#ifndef _statslib_prob_HPP
-#define _statslib_prob_HPP
+/* 
+ * Sample from a Kumaraswamy distribution
+ */
 
-#include "pbern.hpp"
-#include "pbeta.hpp"
-#include "pbinom.hpp"
-#include "pcauchy.hpp"
-#include "pchisq.hpp"
-#include "pexp.hpp"
-#include "pf.hpp"
-#include "pgamma.hpp"
-#include "pinvgamma.hpp"
-#include "pkumaraswamy.hpp"
-#include "plaplace.hpp"
-#include "plogis.hpp"
-#include "pnorm.hpp"
-#include "ppois.hpp"
-#include "pt.hpp"
-#include "punif.hpp"
-#include "pweibull.hpp"
+#ifndef _statslib_rkumaraswamy_HPP
+#define _statslib_rkumaraswamy_HPP
 
-// these depend on one of the above
-#include "plnorm.hpp"
+//
+// scalar output
 
+template<typename T1, typename T2>
+statslib_inline
+common_return_t<T1,T2>
+rkumaraswamy(const T1 a_par, const T2 b_par, rand_engine_t& engine);
+
+template<typename T1, typename T2>
+statslib_inline
+common_return_t<T1,T2>
+rkumaraswamy(const T1 a_par, const T2 b_par, const ullint_t seed_val = std::random_device{}());
+
+//
+// vector/matrix output
+
+#ifdef STATS_ENABLE_INTERNAL_VEC_FEATURES
+template<typename mT, typename T1, typename T2>
+statslib_inline
+mT
+rkumaraswamy(const ullint_t n, const ullint_t k, const T1 a_par, const T2 b_par);
+#endif
+
+//
+// include implementation files
+
+#include "rkumaraswamy.ipp"
 
 #endif

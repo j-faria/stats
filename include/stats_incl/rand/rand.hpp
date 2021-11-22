@@ -35,6 +35,7 @@
 #include "rf.hpp"
 #include "rinvgamma.hpp"
 #include "rinvwish.hpp"
+#include "rkumaraswamy.hpp"
 #include "rlaplace.hpp"
 #include "rlnorm.hpp"
 #include "rlogis.hpp"

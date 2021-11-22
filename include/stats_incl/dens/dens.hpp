@@ -29,6 +29,7 @@
 #include "dgamma.hpp"
 #include "dinvgamma.hpp"
 #include "dinvwish.hpp"
+#include "dkumaraswamy.hpp"
 #include "dlaplace.hpp"
 #include "dlogis.hpp"
 #include "dmvnorm.hpp"

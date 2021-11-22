@@ -30,6 +30,7 @@
 #include "qf.hpp"
 #include "qgamma.hpp"
 #include "qinvgamma.hpp"
+#include "qkumaraswamy.hpp"
 #include "qlaplace.hpp"
 #include "qlogis.hpp"
 #include "qnorm.hpp"
